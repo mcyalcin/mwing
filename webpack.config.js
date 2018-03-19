@@ -1,6 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const FlowBabelWebpackPlugin = require('flow-babel-webpack-plugin')
 
 const HtmlPlugin = new HtmlWebpackPlugin({
   template: path.join(__dirname, 'src', 'index.html'),
@@ -24,6 +25,7 @@ module.exports = {
   },
   plugins: [ 
     HtmlPlugin,
+    new FlowBabelWebpackPlugin(),
   ],
   optimization: {
     runtimeChunk: false,

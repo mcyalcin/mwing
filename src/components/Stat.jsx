@@ -1,5 +1,6 @@
+// @flow
+
 import React from 'react'
-import PropTypes from 'prop-types'
 
 import { iconMap } from '../helpers'
 
@@ -23,46 +24,24 @@ const shieldStyle = {
   fontFamily: 'KimberleyBl',
 }
 
-const Stat = ({ value, icon, style }) => (
+const Stat = ({ value, icon, style }: {value: number, icon: Object, style: Object}) => (
   <div className="col" style={style}>{icon}{' '}{value}</div>
 )
 
-Stat.propTypes = {
-  value: PropTypes.number,
-  icon: PropTypes.object,
-  style: PropTypes.object,
-}
-
-const Attack = ({ value }) => (
+const Attack = ({ value }: {value: number}) => (
   <Stat style={firepowerStyle} icon={iconMap['attack']} value={value} />
 )
 
-const Agility = ({ value }) => (
+const Agility = ({ value }: {value: number}) => (
   <Stat style={agilityStyle} icon={iconMap['agility']} value={value} />
 )
 
-const Hull = ({ value }) => (
+const Hull = ({ value }: {value: number}) => (
   <Stat style={hullStyle} icon={iconMap['hull']} value={value} />
 )
 
-const Shield = ({ value }) => (
+const Shield = ({ value }: {value: number}) => (
   <Stat style={shieldStyle} icon={iconMap['shield']} value={value} />
 )
-
-Attack.propTypes = {
-  value: PropTypes.number,
-}
-
-Agility.propTypes = {
-  value: PropTypes.number,
-}
-
-Hull.propTypes = {
-  value: PropTypes.number,
-}
-
-Shield.propTypes = {
-  value: PropTypes.number,
-}
 
 export { Attack, Agility, Hull, Shield }
