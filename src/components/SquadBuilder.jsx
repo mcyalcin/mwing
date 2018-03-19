@@ -7,9 +7,7 @@ import UnitCard from './UnitCard'
 class SquadBuilder extends React.Component {
   render() {
     const listItems = this.props.units.map((unit, index) => (
-      <li key={index}>
-        <UnitCard unit={unit} onRemove={() => this.props.removeUnit(index)} />
-      </li>
+      <UnitCard key={index} unit={unit} onRemove={() => this.props.removeUnit(index)} />
     ))
     return (
       <ul>

@@ -1,9 +1,9 @@
 const sampleUnit = {
   name: 'Academy Pilot',
-  icon: 'xwing-miniatures-ship-tiefighter',
+  chassis: 'tiefighter',
   pilotSkill: 1,
-  firepower: 2,
-  maneuver: 3,
+  attack: 2,
+  agility: 3,
   hull: 3,
   shield: 0,
   actionBar: ['focus', 'barrelRoll', 'evade'],
