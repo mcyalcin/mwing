@@ -10,11 +10,10 @@ import {
 } from 'reactstrap'
 import { push } from 'react-router-redux'
 import { connect } from 'react-redux'
-import PropTypes from 'prop-types'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-export class Ravbar extends React.Component {
+export class Ravbar extends React.Component<{ redirect: Function }> {
 
   constructor(props) {
     super(props)
@@ -76,10 +75,6 @@ export class Ravbar extends React.Component {
       </div>
     )
   }
-}
-
-Ravbar.propTypes = {
-  redirect: PropTypes.func
 }
 
 const mapDispatchToProps = (dispatch) => ({

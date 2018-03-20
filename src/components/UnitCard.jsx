@@ -1,5 +1,5 @@
+// @flow
 import React from 'react'
-import PropTypes from 'prop-types'
 
 import 'xwing-miniatures-font/dist/xwing-miniatures.css'
 import 'xwing-miniatures-font/dist/xwing-miniatures.ttf'
@@ -10,7 +10,12 @@ import { iconMap } from '../helpers'
 
 import { Attack, Agility, Hull, Shield } from './Stat'
 
-export default class UnitCard extends React.Component {
+type UnitCardProps = {
+  onRemove: Function,
+  unit: Object,
+}
+
+export default class UnitCard extends React.Component<UnitCardProps> {
   render() {
     const { unit } = this.props
 
@@ -32,7 +37,7 @@ export default class UnitCard extends React.Component {
     return (
       <div className="container" style={unitCardStyle}>
         <div className="row">
-          <div className="col col-1">{iconMap[unit.chassis]}</div>
+          <div className="col col-1" style={{fontSize: 'large'}}>{iconMap[unit.chassis]}</div>
           <div className="col">{unit.name}</div>
         </div>
         <div className="row">
@@ -58,9 +63,4 @@ export default class UnitCard extends React.Component {
       </div>
     )
   }
-}
-
-UnitCard.propTypes = {
-  onRemove: PropTypes.func,
-  unit: PropTypes.object,
 }

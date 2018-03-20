@@ -1,10 +1,13 @@
+// @flow
 import React from 'react'
-import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
 import UnitCard from './UnitCard'
 
-class SquadBuilder extends React.Component {
+class SquadBuilder extends React.Component<{
+  units: Array<Object>,
+  removeUnit: Function,
+}> {
   render() {
     const listItems = this.props.units.map((unit, index) => (
       <UnitCard key={index} unit={unit} onRemove={() => this.props.removeUnit(index)} />
@@ -15,11 +18,6 @@ class SquadBuilder extends React.Component {
       </ul>
     )
   }
-}
-
-SquadBuilder.propTypes = {
-  units: PropTypes.arrayOf(PropTypes.object),
-  removeUnit: PropTypes.func,
 }
 
 const mapStateToProps = (state) => ({

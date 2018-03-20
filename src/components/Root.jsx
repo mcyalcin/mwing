@@ -1,6 +1,6 @@
+// @flow
 import React from 'react'
 import { Provider } from 'react-redux'
-import PropTypes from 'prop-types'
 import { Route, Switch } from 'react-router'
 import { ConnectedRouter } from 'react-router-redux'
 
@@ -10,7 +10,7 @@ import SquadBuilder from './SquadBuilder'
 import Lobby from './Lobby'
 import Profile from './Profile'
 
-const Root = ({ store, history }) =>  (  
+const Root = ({ store, history }: { store: Object, history: Object }) =>  (
   <Provider store={store}>
     <div className="container">    
       <Navbar />
@@ -25,10 +25,5 @@ const Root = ({ store, history }) =>  (
     </div>
   </Provider>
 )
-
-Root.propTypes = {
-  store: PropTypes.object,
-  history: PropTypes.object,
-}
 
 export default Root

@@ -1,5 +1,4 @@
 // @flow
-
 import React from 'react'
 
 import { iconMap } from '../helpers'
@@ -24,23 +23,23 @@ const shieldStyle = {
   fontFamily: 'KimberleyBl',
 }
 
-const Stat = ({ value, icon, style }: {value: number, icon: Object, style: Object}) => (
+const Stat = ({ value, icon, style }: { value: number, icon: Object, style: Object }) => (
   <div className="col" style={style}>{icon}{' '}{value}</div>
 )
 
-const Attack = ({ value }: {value: number}) => (
+const Attack = ({ value }: { value: number }) => (
   <Stat style={firepowerStyle} icon={iconMap['attack']} value={value} />
 )
 
-const Agility = ({ value }: {value: number}) => (
+const Agility = ({ value }: { value: number }) => (
   <Stat style={agilityStyle} icon={iconMap['agility']} value={value} />
 )
 
-const Hull = ({ value }: {value: number}) => (
+const Hull = ({ value }: { value: number }) => (
   <Stat style={hullStyle} icon={iconMap['hull']} value={value} />
 )
 
-const Shield = ({ value }: {value: number}) => (
+const Shield = ({ value }: { value: number }) => (
   <Stat style={shieldStyle} icon={iconMap['shield']} value={value} />
 )
 
